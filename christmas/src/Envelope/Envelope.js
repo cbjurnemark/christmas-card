@@ -32,16 +32,16 @@ function Envelope() {
       <div className={`flap bottomflap ${openFlaps.includes('bottomflap') ? 'open' : ''}`} onClick={() => handleFlapClick('bottomflap')}></div>
       <div className='card'>
         <img 
-          src="/iron.png"
-          alt="Description" 
+          src={process.env.PUBLIC_URL + '/iron.png'}
+          alt="Waffle iron" 
           // style={{ objectFit: 'cover', width: '50%', height: '50%' }}
           className={`image ${isImageSpinning ? 'spin' : ''} ${isImageShrunk ? 'shrink' : ''}`}
           onClick={handleImageClick}
           onDoubleClick={handleImageDoubleClick}
         />
         <img
-          src="/note.png"
-          alt="Description"
+          src={process.env.PUBLIC_URL + '/note.png'}
+          alt="Notes"
           className="image note"
         />
         <div className='inside-card'></div>
