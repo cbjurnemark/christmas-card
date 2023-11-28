@@ -1,37 +1,136 @@
-.envelope {
-  width: 50%; /* Adjust the size as needed */
-  height: 200px; /* Adjust the size as needed */
-  position: relative; /* Needed for absolute positioning of children */
-  cursor: pointer; /* Changes the cursor on hover to indicate it's clickable */
-  /* Add any additional styling you want for the envelope */
-}
+/* TODO  */
+/* make sure that the flaps keep the same size/position within the envelope when changing win size */
 
 .card {
-    transition: opacity 0.3s ease;
-    opacity: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(212, 191, 191);
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure it is in the bottom */
+}
+
+.inside-card{
+  position: absolute;
+  border: 5px dashed rgb(173, 155, 155);
+  top: 1%; 
+  left: 1%;
+  right: 1%;
+  bottom: 1%;
+  z-index: -1;
+}
+
+.image {
+  width: 50%;
+  height: auto;
+  object-fit: cover; /* or use 'cover' based on your preference */
+}
+
+.image.note {
+  width: 60%; /* Adjust the width as needed */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 60%; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.image.spin {
+  animation: rotate 1s linear infinite; /* Adjust duration and timing function as needed */
+}
+
+.image.shrink {
+  transform: scale(0.5) translate(-50%, -50%);
+}
+
+.envelope {
+  width: 50%; /* Adjust the size as needed */
+  height: 500px; /* Adjust the size as needed */
+  position: relative; /* Needed for absolute positioning of children */
+  cursor: pointer; /* Changes the cursor on hover to indicate it's clickable */
+  background-color: rgb(112, 17, 17);  
+}
+  
+  .topflap {
+    transition: transform 0.5s ease;
+    position: absolute; 
+    width: 0;
+    height: 0;
+    border-left: 25vw solid transparent; /* Adjust size as needed */
+    border-right: 25vw solid transparent; /* Adjust size as needed */
+    border-top: 20vw solid rgb(112, 17, 17); /* Adjust size and color as needed */
+    transform-origin: top center;
+    clip-path: triangle(100%, 100% 100%);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+    z-index: 4;
+  }
+
+  .rightflap {
+    transition: transform 0.5s ease;
+    /* transition-delay: 1.5s; */
     position: absolute;
-    background-color: rgb(226, 141, 30);
-    width: 100%;
-    height: 500px;
-    top: 50px; 
-    left: 50px;
+    right: 0; /* Align with the right side of the envelope */
+    top: 0; /* Align with the top of the envelope */
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 27vh solid transparent; 
+    border-bottom: 25vh solid transparent;
+    border-right: 25vw solid rgb(112, 17, 17); /* Transparent side */
+    transform-origin: right; /* Adjust the rotation origin */
+    clip-path: triangle(100%, 100% 100%);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Optional shadow effect */
+    z-index: 2; 
   }
-  
-  .envelope.open .card {
-    opacity: 1; /* Make the card visible when the envelope is open */
-  }
-  
-  .flap {
-    transition: transform 0.3s ease;
-    width: 100%;
-    height: 500px;
-    background-color: rgb(142, 18, 18);
+  .leftflap {
+    transition: transform 0.5s ease;
     position: absolute;
+    /* transition-delay: 1s; */
+    left: 0; /* Align with the left side of the envelope */
+    top: 0; /* Align with the top of the envelope */
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 27vh solid transparent;
+    border-bottom: 25vh solid transparent;
+    border-left: 25vw solid rgb(112, 17, 17); /* Transparent side */
+    transform-origin: left; /* Adjust the rotation origin */
+    clip-path: triangle(100%, 100% 100%);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Optional shadow effect */
+    z-index: 2; 
   }
-  
-  .flap.open {
+  .bottomflap {
+    transition: transform 0.5s ease;
+    /* transition-delay: 0.5s; */
+    position: absolute; 
+    width: 0;
+    height: 0;
+    bottom: 0; /* Align with the bottom of the envelope */
+    border-left: 25vw solid transparent; /* Adjust size as needed */
+    border-right: 25vw solid transparent; /* Adjust size as needed */
+    border-bottom: 25vw solid rgb(112, 17, 17); /* Adjust size and color as needed */
+    transform-origin: bottom center;
+    clip-path: triangle(100%, 100% 100%);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+    z-index: 3; 
+  }
+
+  .topflap.open { 
     transform: rotateX(-180deg); /* Example of opening animation */
-    height: 50px;
-    
   }
-  
+  .bottomflap.open {
+    transform: rotateX(-180deg); /* Example of opening animation */
+  }
+  .rightflap.open {
+    transform: rotateY(-180deg); /* Example of opening animation */
+  }
+  .leftflap.open {
+    transform: rotateY(-180deg); /* Example of opening animation */
+  }
+
+

@@ -1,22 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Envelope.css';
 
 function Envelope() {
-    const [isOpen, setIsOpen] = React.useState(false);
-  
-    const toggleOpen = () => setIsOpen(!isOpen);
-  
-    return (
-      <div className="envelope" onClick={toggleOpen}>
-        <div className={`flap ${isOpen ? "open" : ""}`}></div>
-        <div className={`envelope ${isOpen ? "open" : ""}`}></div>
-        {isOpen && (
-          <div className="card">
-            Your message here
-          </div>
-        )}
-      </div>
-    );
-  }
+  const [openFlaps, setOpenFlaps] = useState([]);
+  const [isImageSpinning, setIsImageSpinning] = useState(false);
+  const [isImageShrunk, setIsImageShrunk] = useState(false);
 
-export default Envelope
+  const handleFlapClick = (flap) => {
+    if (!openFlaps.includes(flap)) {
+      setOpenFlaps([...openFlaps, flap]);
+    }
+  };
+  const handleImageClick = () => {
+    if (!isImageShrunk) {
+      setIsImageSpinning(!isImageSpinning);
+    } else {
+      setIsImageShrunk(false);
+    }
+  };
+
+  const handleImageDoubleClick = () => {
+    setIsImageShrunk(!isImageShrunk);
+    setIsImageSpinning(false); // Ensure spinning is turned off when double-clicked
+  };
+
+  return (
+    <div className="envelope">
+      <div className={`flap topflap ${openFlaps.includes('topflap') ? 'open' : ''}`} onClick={() => handleFlapClick('topflap')}></div>
+      <div className={`flap rightflap ${openFlaps.includes('rightflap') ? 'open' : ''}`} onClick={() => handleFlapClick('rightflap')}></div>
+      <div className={`flap leftflap ${openFlaps.includes('leftflap') ? 'open' : ''}`} onClick={() => handleFlapClick('leftflap')}></div>
+      <div className={`flap bottomflap ${openFlaps.includes('bottomflap') ? 'open' : ''}`} onClick={() => handleFlapClick('bottomflap')}></div>
+      <div className='card'>
+        <img 
+          src="/iron.png"
+          alt="Description" 
+          // style={{ objectFit: 'cover', width: '50%', height: '50%' }}
+          className={`image ${isImageSpinning ? 'spin' : ''} ${isImageShrunk ? 'shrink' : ''}`}
+          onClick={handleImageClick}
+          onDoubleClick={handleImageDoubleClick}
+        />
+        <img
+          src="/note.png"
+          alt="Description"
+          className="image note"
+        />
+        <div className='inside-card'></div>
+        </div>
+    </div>
+  );
+}
+
+export default Envelope;
