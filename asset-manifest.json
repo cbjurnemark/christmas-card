@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/christmas-card/static/css/main.e40f7c96.css",
+    "main.js": "/christmas-card/static/js/main.1ef64cd0.js",
+    "static/js/787.aa8656ba.chunk.js": "/christmas-card/static/js/787.aa8656ba.chunk.js",
+    "static/media/snow.png": "/christmas-card/static/media/snow.eccd0765790bc53532b1.png",
+    "index.html": "/christmas-card/index.html",
+    "main.e40f7c96.css.map": "/christmas-card/static/css/main.e40f7c96.css.map",
+    "main.1ef64cd0.js.map": "/christmas-card/static/js/main.1ef64cd0.js.map",
+    "787.aa8656ba.chunk.js.map": "/christmas-card/static/js/787.aa8656ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e40f7c96.css",
+    "static/js/main.1ef64cd0.js"
+  ]
+}
