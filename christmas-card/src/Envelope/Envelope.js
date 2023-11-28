@@ -34,7 +34,6 @@ function Envelope() {
         <img 
           src={process.env.PUBLIC_URL + '/iron.png'}
           alt="Waffle iron" 
-          // style={{ objectFit: 'cover', width: '50%', height: '50%' }}
           className={`image ${isImageSpinning ? 'spin' : ''} ${isImageShrunk ? 'shrink' : ''}`}
           onClick={handleImageClick}
           onDoubleClick={handleImageDoubleClick}
