@@ -1,6 +1,6 @@
 {
-  "name": "christmas",
-  "homepage": "https://cbjurnemark.github.io/christmas",
+  "name": "christmas-card",
+  "homepage": "https://cbjurnemark.github.io/christmas-card",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
