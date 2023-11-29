@@ -23,7 +23,7 @@
 .image {
   width: 50%;
   height: auto;
-  object-fit: cover; /* or use 'cover' based on your preference */
+  object-fit: cover;
 }
 
 .image.note {
@@ -72,10 +72,9 @@
 
   .rightflap {
     transition: transform 0.5s ease;
-    /* transition-delay: 1.5s; */
     position: absolute;
-    right: 0; /* Align with the right side of the envelope */
-    top: 0; /* Align with the top of the envelope */
+    right: 0; 
+    top: 0; 
     bottom: 0;
     width: 0;
     height: 0;
@@ -90,23 +89,21 @@
   .leftflap {
     transition: transform 0.5s ease;
     position: absolute;
-    /* transition-delay: 1s; */
-    left: 0; /* Align with the left side of the envelope */
-    top: 0; /* Align with the top of the envelope */
+    left: 0; 
+    top: 0; 
     bottom: 0;
     width: 0;
     height: 0;
     border-top: 27vh solid transparent;
     border-bottom: 25vh solid transparent;
     border-left: 25vw solid rgb(112, 17, 17); /* Transparent side */
-    transform-origin: left; /* Adjust the rotation origin */
+    transform-origin: left; 
     clip-path: triangle(100%, 100% 100%);
-    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Optional shadow effect */
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
     z-index: 2; 
   }
   .bottomflap {
     transition: transform 0.5s ease;
-    /* transition-delay: 0.5s; */
     position: absolute; 
     width: 0;
     height: 0;
@@ -121,16 +118,16 @@
   }
 
   .topflap.open { 
-    transform: rotateX(-180deg); /* Example of opening animation */
+    transform: rotateX(-180deg);
   }
   .bottomflap.open {
-    transform: rotateX(-180deg); /* Example of opening animation */
+    transform: rotateX(-180deg);
   }
   .rightflap.open {
-    transform: rotateY(-180deg); /* Example of opening animation */
+    transform: rotateY(-180deg);
   }
   .leftflap.open {
-    transform: rotateY(-180deg); /* Example of opening animation */
+    transform: rotateY(-180deg);
   }
 
 
