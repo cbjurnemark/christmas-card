@@ -15,8 +15,7 @@ body::after {
   left: 0;
   right: 0;
   height: 24%; /* Adjust the height of the snowflake area */
-  background: url('../public/snow_ground.png') repeat-y;
-  background-repeat: repeat-y;
+  background: url('../public/snow_ground.png');
   background-size: 100%;
 }
 
