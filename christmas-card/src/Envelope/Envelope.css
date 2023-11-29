@@ -1,3 +1,141 @@
+.envelope {
+  width: 700px;
+  height: 470px;
+  position: relative; /* Needed for absolute positioning of children */
+  cursor: pointer; /* Changes the cursor on hover to indicate it's clickable */
+  background-color: rgb(112, 17, 17);  
+}
+.topflap {
+  transition: transform 0.5s ease;
+  position: absolute; 
+  width: 0;
+  height: 0;
+  border-left: 350px solid transparent;
+  border-right: 350px solid transparent;
+  border-top: 300px solid rgb(112, 17, 17);
+  transform-origin: top center;
+  clip-path: triangle(100%, 100% 100%);
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+  z-index: 4;
+}
+.rightflap {
+  transition: transform 0.5s ease;
+  position: absolute;
+  right: 0; 
+  top: 0; 
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 235px solid transparent; 
+  border-bottom: 235px solid transparent;
+  border-right: 300px solid rgb(112, 17, 17); /* Transparent side */
+  transform-origin: right; /* Adjust the rotation origin */
+  clip-path: triangle(100%, 100% 100%);
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
+  z-index: 2; 
+}
+.leftflap {
+  transition: transform 0.5s ease;
+  position: absolute;
+  left: 0; 
+  top: 0; 
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 235px solid transparent;
+  border-bottom: 235px solid transparent;
+  border-left: 300px solid rgb(112, 17, 17); /* Transparent side */
+  transform-origin: left; 
+  clip-path: triangle(100%, 100% 100%);
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
+  z-index: 2; 
+}
+.bottomflap {
+  transition: transform 0.5s ease;
+  position: absolute; 
+  width: 0;
+  height: 0;
+  bottom: 0; /* Align with the bottom of the envelope */
+  border-left: 350px solid transparent;
+  border-right: 350px solid transparent;
+  border-bottom: 300px solid rgb(112, 17, 17);
+  transform-origin: bottom center;
+  clip-path: triangle(100%, 100% 100%);
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+  z-index: 3; 
+}
+
+/* Media query for smaller screens (adjust the max-width as needed) */
+@media (max-width: 600px) {
+.envelope {
+  width: 100px;
+  height: 30px;
+  position: relative; /* Needed for absolute positioning of children */
+  cursor: pointer; /* Changes the cursor on hover to indicate it's clickable */
+  background-color: rgb(112, 17, 17);  
+}
+  
+  .topflap {
+    transition: transform 0.5s ease;
+    position: absolute; 
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 20px solid rgb(112, 17, 17);
+    transform-origin: top center;
+    clip-path: triangle(100%, 100% 100%);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+    z-index: 4;
+  }
+
+  .rightflap {
+    transition: transform 0.5s ease;
+    position: absolute;
+    right: 0; 
+    top: 0; 
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent; 
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid rgb(112, 17, 17); /* Transparent side */
+    transform-origin: right; /* Adjust the rotation origin */
+    clip-path: triangle(100%, 100% 100%);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
+    z-index: 2; 
+  }
+  .leftflap {
+    transition: transform 0.5s ease;
+    position: absolute;
+    left: 0; 
+    top: 0; 
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid rgb(112, 17, 17); /* Transparent side */
+    transform-origin: left; 
+    clip-path: triangle(100%, 100% 100%);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
+    z-index: 2; 
+  }
+  .bottomflap {
+    transition: transform 0.5s ease;
+    position: absolute; 
+    width: 0;
+    height: 0;
+    bottom: 0; /* Align with the bottom of the envelope */
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 20px solid rgb(112, 17, 17);
+    transform-origin: bottom center;
+    clip-path: triangle(100%, 100% 100%);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+    z-index: 3; 
+  }
+}
 
 .card {
   position: relative;
@@ -46,75 +184,6 @@
   transform: scale(0.5) translate(-50%, -50%);
 }
 
-.envelope {
-  width: 700px;
-  height: 470px;
-  position: relative; /* Needed for absolute positioning of children */
-  cursor: pointer; /* Changes the cursor on hover to indicate it's clickable */
-  background-color: rgb(112, 17, 17);  
-}
-  
-  .topflap {
-    transition: transform 0.5s ease;
-    position: absolute; 
-    width: 0;
-    height: 0;
-    border-left: 350px solid transparent;
-    border-right: 350px solid transparent;
-    border-top: 300px solid rgb(112, 17, 17);
-    transform-origin: top center;
-    clip-path: triangle(100%, 100% 100%);
-    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
-    z-index: 4;
-  }
-
-  .rightflap {
-    transition: transform 0.5s ease;
-    position: absolute;
-    right: 0; 
-    top: 0; 
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-top: 235px solid transparent; 
-    border-bottom: 235px solid transparent;
-    border-right: 300px solid rgb(112, 17, 17); /* Transparent side */
-    transform-origin: right; /* Adjust the rotation origin */
-    clip-path: triangle(100%, 100% 100%);
-    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
-    z-index: 2; 
-  }
-  .leftflap {
-    transition: transform 0.5s ease;
-    position: absolute;
-    left: 0; 
-    top: 0; 
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-top: 235px solid transparent;
-    border-bottom: 235px solid transparent;
-    border-left: 300px solid rgb(112, 17, 17); /* Transparent side */
-    transform-origin: left; 
-    clip-path: triangle(100%, 100% 100%);
-    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
-    z-index: 2; 
-  }
-  .bottomflap {
-    transition: transform 0.5s ease;
-    position: absolute; 
-    width: 0;
-    height: 0;
-    bottom: 0; /* Align with the bottom of the envelope */
-    border-left: 350px solid transparent;
-    border-right: 350px solid transparent;
-    border-bottom: 300px solid rgb(112, 17, 17);
-    transform-origin: bottom center;
-    clip-path: triangle(100%, 100% 100%);
-    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
-    z-index: 3; 
-  }
-
   .topflap.open { 
     transform: rotateX(-180deg);
   }
@@ -127,5 +196,7 @@
   .leftflap.open {
     transform: rotateY(-180deg);
   }
+
+
 
 

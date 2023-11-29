@@ -2,7 +2,7 @@
 
 @keyframes snowfall {
   0% {
-    background-position: 0% 0%;
+    background-position: 0px 0px;
     opacity: 0; /* Start with opacity 0 */
   }
   1%, 2%, 3%, 4%, 5%, 6%, 7%, 8%, 9%, 10% {
@@ -33,7 +33,7 @@
     opacity: 0.3;
   }
   91%, 92%, 93%, 94%, 95%, 96%, 97%, 98%, 99%, 100% {
-    background-position: 0% -100%;
+    background-position: 0px 100px;
     opacity: 0; /* End with opacity 0 */
   }
 }
@@ -58,7 +58,7 @@
   height: 100%;
   background: url('../public/snow.png') repeat-y;
   background-size: 100%;
-  animation: snowfall 2.5s linear infinite; 
+  animation: snowfall 2s linear infinite; 
   z-index: -1; /* Ensure the snowfall is positioned behind other content */
 
 }
