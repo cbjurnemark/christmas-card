@@ -66,10 +66,10 @@
 }
 
 /* Media query for smaller screens (adjust the max-width as needed) */
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
 .envelope {
-  width: 100px;
-  height: 30px;
+  width: 250px;
+  height: 150px;
   position: relative; /* Needed for absolute positioning of children */
   cursor: pointer; /* Changes the cursor on hover to indicate it's clickable */
   background-color: rgb(112, 17, 17);  
@@ -80,9 +80,9 @@
     position: absolute; 
     width: 0;
     height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 20px solid rgb(112, 17, 17);
+    border-left: 125px solid transparent; /* 50% of the envelope width */
+    border-right: 125px solid transparent; /* 50% of the envelope width */
+    border-top: 100px solid rgb(112, 17, 17);
     transform-origin: top center;
     clip-path: triangle(100%, 100% 100%);
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
@@ -97,9 +97,9 @@
     bottom: 0;
     width: 0;
     height: 0;
-    border-top: 15px solid transparent; 
-    border-bottom: 15px solid transparent;
-    border-right: 20px solid rgb(112, 17, 17); /* Transparent side */
+    border-top: 75px solid transparent; /* 50% of the envelope height */
+    border-bottom: 75px solid transparent; /* 50% of the envelope height */
+    border-right: 150px solid rgb(112, 17, 17); /* Transparent side */
     transform-origin: right; /* Adjust the rotation origin */
     clip-path: triangle(100%, 100% 100%);
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
@@ -113,9 +113,9 @@
     bottom: 0;
     width: 0;
     height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 20px solid rgb(112, 17, 17); /* Transparent side */
+    border-top: 75px solid transparent; /* 50% of the envelope height */
+    border-bottom: 75px solid transparent; /* 50% of the envelope height */
+    border-left: 150px solid rgb(112, 17, 17); /* Transparent side */
     transform-origin: left; 
     clip-path: triangle(100%, 100% 100%);
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4)); /* Shadow effect */
@@ -127,9 +127,9 @@
     width: 0;
     height: 0;
     bottom: 0; /* Align with the bottom of the envelope */
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 20px solid rgb(112, 17, 17);
+    border-left: 125px solid transparent; /* 50% of the envelope width */
+    border-right: 125px solid transparent; /* 50% of the envelope width */
+    border-bottom: 90px solid rgb(112, 17, 17);
     transform-origin: bottom center;
     clip-path: triangle(100%, 100% 100%);
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));

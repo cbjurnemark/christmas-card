@@ -3,7 +3,7 @@
 @keyframes snowfall {
   0% {
     background-position: 0px 0px;
-    opacity: 0; /* Start with opacity 0 */
+    opacity: 0.1; /* Start */
   }
   1%, 2%, 3%, 4%, 5%, 6%, 7%, 8%, 9%, 10% {
     opacity: 0.1;
@@ -21,20 +21,20 @@
     opacity: 0.5;
   }
   51%, 52%, 53%, 54%, 55%, 56%, 57%, 58%, 59%, 60% {
-    opacity: 0.6; /* Peak opacity */
+    opacity: 0.9; /* Peak opacity */
   }
   61%, 62%, 63%, 64%, 65%, 66%, 67%, 68%, 69%, 70% {
-    opacity: 0.5;
+    opacity: 0.7;
   }
   71%, 72%, 73%, 74%, 75%, 76%, 77%, 78%, 79%, 80% {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   81%, 82%, 83%, 84%, 85%, 86%, 87%, 88%, 89%, 90% {
     opacity: 0.3;
   }
   91%, 92%, 93%, 94%, 95%, 96%, 97%, 98%, 99%, 100% {
     background-position: 0px 100px;
-    opacity: 0; /* End with opacity 0 */
+    opacity: 0.1; /* End */
   }
 }
 
