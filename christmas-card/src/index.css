@@ -10,13 +10,17 @@ body {
 
 body::after {
   content: "";
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 24%; /* Adjust the height of the snowflake area */
+  height: calc(25vh); /* Adjust the height as needed */
+  width: 100%;
   background: url('../public/snow_ground.png');
-  background-size: 100%;
+  background-size: cover;
+  background-position: fixed;
+  background-repeat: no-repeat; /* Prevent repeating */
+  z-index: 0;
 }
 
 code {

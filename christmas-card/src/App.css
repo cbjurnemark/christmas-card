@@ -58,14 +58,7 @@
   height: 100%;
   background: url('../public/snow.png') repeat-y;
   background-size: 100%;
-  animation: snowfall 2.5s linear infinite; /* Adjust the animation duration as needed */
+  animation: snowfall 2.5s linear infinite; 
   z-index: -1; /* Ensure the snowfall is positioned behind other content */
 
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-  text-align: center; /* Center text content within .content */
-  color: white; /* Set the text color */
 }
